@@ -8,10 +8,18 @@ import { CounterDirective } from './directives/counter.directive';
 import { CartSummaryComponent } from './cart/cart-summary/cart-summary.component';
 import { CartDetailComponent } from './cart/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from '../includes/header/header.component';
 
 @NgModule({
-  declarations: [StoreComponent, CounterDirective, CartSummaryComponent, CartDetailComponent, CheckoutComponent],
+  declarations: [
+    StoreComponent,
+    CounterDirective,
+    CartSummaryComponent,
+    CartDetailComponent,
+    CheckoutComponent,
+    HeaderComponent,
+  ],
   imports: [
     CommonModule,
     ModelModule,

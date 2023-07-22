@@ -1,1 +1,19 @@
-<p>checkout works!</p>
+<app-header></app-header>
+<div *ngIf="orderSent" class="row">
+  <div class="col-sm-12m-2 text-center">
+    <h2>Thanks!</h2>
+    <p>Thank for placing your order.</p>
+    <p>We'll ship your goods as soon as possible.</p>
+    <button class="btn btn-primary" routerLink="/store">Return to Store</button>
+  </div>
+</div>
+<div class="row" *ngIf="!orderSent">
+  <div class="col-sm-12">
+    <form #form="ngForm" novalidate
+          (ngSubmit)="submitOrder(form)" class="m-2">
+      <div class="form-group">
+        <label for="">State</label>
+      </div>
+    </form>
+  </div>
+</div>

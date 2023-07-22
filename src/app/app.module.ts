@@ -3,17 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from './store/store.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { StoreComponent } from './store/store.component';
-import { CartDetailComponent } from './store/cart/cart-detail/cart-detail.component';
-import { CheckoutComponent } from './store/checkout/checkout.component';
-
-const appRoutes = [
-  {path:"store",component:StoreComponent},
-  {path:"cart",component:CartDetailComponent},
-  {path:"checkout",component:CheckoutComponent},
-  // {path:"**",rediretTo:"/store"}
-];
-
+import { appRoutes } from './routes/routes';
+import { StoreFirstGuard } from './routes/store-first.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +15,7 @@ const appRoutes = [
     StoreModule,
     RouterModule.forRoot(appRoutes,{enableTracing:true})
   ],
-  providers: [],
+  providers: [StoreFirstGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
