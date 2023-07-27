@@ -13,7 +13,7 @@ import { StoreFirstGuard } from './routes/store-first.guard';
   imports: [
     BrowserModule,
     StoreModule,
-    RouterModule.forRoot(appRoutes,{enableTracing:true})
+    RouterModule.forRoot(appRoutes,{enableTracing:true}),
   ],
   providers: [StoreFirstGuard],
   bootstrap: [AppComponent]

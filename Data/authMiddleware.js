@@ -3,8 +3,8 @@ const APP_SECRET = "myappsecret";
 const USERNAME = "admin";
 const PASSWORD = "secret";
 const mappings = {
-  get: ["/api/orders", "/orders"],
-  post: ["/api/products", "/products", "/api/categories", "/categories"]
+  post: ["/api/products", "/products", "/api/categories", "/categories"],
+  get: ["/api/orders", "/orders"]
 }
 
 function requiresAuth(method, url) {
@@ -32,12 +32,14 @@ module.exports = function (req, res, next) {
   } else if (requiresAuth(req.method, req.url)) {
     let token = req.headers["authorization"] || "";
     if (token.startsWith("Bearer<")) {
-      token = token.substring(7, token.length - 1);
+      token = token.split("<")[1];
       try {
         jwt.verify(token, APP_SECRET);
         next();
         return;
-      } catch (err) {}
+      } catch (err) {
+        res.json([]);
+      }
     }
     res.statusCode = 401;
     res.end();

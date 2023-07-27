@@ -3,7 +3,7 @@ import {
 } from "@angular/core";
 import {
   Product
-} from "./model";
+} from "../product/model";
 import {
   Observable,
   from

@@ -10,7 +10,7 @@ export class HeaderComponent {
   constructor(private router:Router){}
 
   hasRoute(route:string):boolean{
-    return this.router.url ===route;
+    return this.router.url === route;
   }
 
 }

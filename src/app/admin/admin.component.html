@@ -1,0 +1,21 @@
+<div class="row mt-2">
+    <div class="col-sm-3 col-md-3">
+        <button class="w-100 btn btn-block btn-outline-info mb-2"
+                routerLink="/admin/main/products"
+                routerLinkActive="active">
+            Products
+        </button>
+        <button class="w-100 btn btn-block btn-outline-info mb-2"
+                routerLink="/admin/main/orders"
+                routerLinkActive="active">
+            Orders
+        </button>
+        <button class="w-100 btn btn-block btn-outline-danger"
+                (click)="logout()">
+            Logout
+        </button>
+    </div>
+    <div class="col-sm-9 col-md-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>
